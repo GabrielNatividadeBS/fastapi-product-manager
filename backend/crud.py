@@ -3,7 +3,7 @@ from fastapi import HTTPException
 from models import Product, CategoryGroup, CATEGORY_GROUP_MAP
 from schemas import ProductCreate, ProductUpdate
 
-MAX_PRODUTOS = 100
+MAX_PRODUCTS = 100
 
 def get_category_group(category: str) -> CategoryGroup:
     """
@@ -40,7 +40,7 @@ def create_product(db: Session, product: ProductCreate):
 
     # Limpeza automática se atingir o limite
     total = db.query(Product).count()
-    if total >= MAX_PRODUTOS:
+    if total >= MAX_PRODUCTS:
         db.query(Product).delete()
         db.commit()
 
