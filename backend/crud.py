@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
-from .models import Product, CategoryGroup, CATEGORY_GROUP_MAP
-from .schemas import ProductCreate, ProductUpdate
+from models import Product, CategoryGroup, CATEGORY_GROUP_MAP
+from schemas import ProductCreate, ProductUpdate
 
 
 

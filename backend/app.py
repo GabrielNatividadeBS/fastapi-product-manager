@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
-from .database import engine, get_db
-from .models import Base
-from .schemas import ProductCreate, ProductRead, ProductUpdate
-from . import crud
+from database import engine, get_db
+from models import Base
+from schemas import ProductCreate, ProductRead, ProductUpdate
+import crud
 
 Base.metadata.create_all(bind = engine)
 

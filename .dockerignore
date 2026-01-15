@@ -1,0 +1,14 @@
+# Ignorar arquivos e pastas desnecessários para o build do Docker
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+.env
+.git
+.gitignore
+node_modules/
+frontend-crud/node_modules/
+.vscode/
+.DS_Store
+*.log

@@ -1,5 +1,5 @@
 from pydantic import BaseModel, ConfigDict
-from .models import CategoryGroup
+from models import CategoryGroup
 
 class ProductCreate(BaseModel):
     """
