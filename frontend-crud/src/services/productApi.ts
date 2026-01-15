@@ -1,6 +1,6 @@
 import { Product, ProductFormData } from "@/types/product";
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "https://fastapi-product-manager-production.up.railway.app";
 
 export const productApi = {
   async getAll(category_group?: string): Promise<Product[]> {
