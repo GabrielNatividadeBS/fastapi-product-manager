@@ -113,12 +113,14 @@ const ProductModal = ({ open, onClose, onSubmit, product, isLoading }: ProductMo
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel htmlFor="product-name">Name</FormLabel>
                   <FormControl>
                     <Input
+                      id="product-name"
+                      name="name"
+                      autoComplete="name"
                       placeholder="Enter product name"
                       {...field}
-                      className="h-11"
                     />
                   </FormControl>
                   <FormMessage />
@@ -132,10 +134,12 @@ const ProductModal = ({ open, onClose, onSubmit, product, isLoading }: ProductMo
               name="category"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Categoria</FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value}>
+                  <span className="block text-sm font-medium leading-none mb-1">Categoria</span>
+                  {/* Hidden input para garantir name/id no formulário */}
+                  <input type="hidden" name="category" value={field.value} />
+                  <Select onValueChange={field.onChange} value={field.value} name="category">
                     <FormControl>
-                      <SelectTrigger className="h-11">
+                      <SelectTrigger className="h-11" id="product-category">
                         <SelectValue placeholder="Selecione a categoria" />
                       </SelectTrigger>
                     </FormControl>
@@ -157,12 +161,15 @@ const ProductModal = ({ open, onClose, onSubmit, product, isLoading }: ProductMo
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Description</FormLabel>
+                  <FormLabel htmlFor="product-description">Description</FormLabel>
                   <FormControl>
                     <Textarea
+                      id="product-description"
+                      name="description"
+                      autoComplete="off"
                       placeholder="Enter product description (optional)"
-                      {...field}
                       className="min-h-[100px] resize-none"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage />
@@ -175,19 +182,22 @@ const ProductModal = ({ open, onClose, onSubmit, product, isLoading }: ProductMo
               name="price"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Price</FormLabel>
+                  <FormLabel htmlFor="product-price">Price</FormLabel>
                   <FormControl>
                     <div className="relative">
                       <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
                         R$
                       </span>
                       <Input
+                        id="product-price"
+                        name="price"
                         type="number"
                         step="0.01"
                         min="0"
+                        autoComplete="off"
                         placeholder="0.00"
-                        {...field}
                         className="h-11 pl-12"
+                        {...field}
                       />
                     </div>
                   </FormControl>
@@ -202,15 +212,20 @@ const ProductModal = ({ open, onClose, onSubmit, product, isLoading }: ProductMo
               render={({ field }) => (
                 <FormItem className="flex items-center justify-between rounded-lg border border-border p-4">
                   <div>
-                    <FormLabel className="text-base">In Stock</FormLabel>
+                    <span className="text-base font-medium">In Stock</span>
                     <p className="text-sm text-muted-foreground">
                       Is this product currently available?
                     </p>
                   </div>
+                  {/* Hidden input para garantir name/id no formulário */}
+                  <input type="hidden" name="stock" value={field.value ? 'true' : 'false'} />
                   <FormControl>
                     <Switch
                       checked={field.value}
                       onCheckedChange={field.onChange}
+                      name="stock"
+                      id="product-stock"
+                      aria-label="In Stock"
                     />
                   </FormControl>
                 </FormItem>

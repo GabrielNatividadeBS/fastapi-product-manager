@@ -83,9 +83,23 @@ const FormLabel = React.forwardRef<
 FormLabel.displayName = "FormLabel";
 
 const FormControl = React.forwardRef<React.ElementRef<typeof Slot>, React.ComponentPropsWithoutRef<typeof Slot>>(
-  ({ ...props }, ref) => {
+  ({ children, ...props }, ref) => {
     const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 
+    // Se houver apenas um filho, clona e injeta os atributos de acessibilidade
+    if (React.isValidElement(children)) {
+      // Prioriza id explícito do filho, senão usa formItemId
+      const childId = children.props.id || formItemId;
+      return React.cloneElement(children, {
+        ref,
+        id: childId,
+        'aria-describedby': !error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`,
+        'aria-invalid': !!error,
+        ...props,
+        ...children.props,
+      });
+    }
+    // fallback para Slot se não houver filho válido
     return (
       <Slot
         ref={ref}
