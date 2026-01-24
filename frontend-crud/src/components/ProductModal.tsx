@@ -97,7 +97,14 @@ const ProductModal = ({ open, onClose, onSubmit, product, isLoading }: ProductMo
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
       <DialogContent className="sm:max-w-[480px] animate-scale-in">
-        <DialogHeader />
+        <DialogHeader>
+          <DialogTitle>{isEditing ? "Edit Product" : "New Product"}</DialogTitle>
+          <DialogDescription>
+            {isEditing
+              ? "Update the product information below."
+              : "Fill in the details to add a new product."}
+          </DialogDescription>
+        </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5">
             {/* Nome do produto */}
