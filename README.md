@@ -76,3 +76,9 @@ CRUD/
 ├── tests/             # Testes do backend
 ├── requirements.txt   # Dependências do backend
 ```
+
+## Link do Projeto
+
+'''
+https://frontend-production-e235.up.railway.app/
+'''
