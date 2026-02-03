@@ -3,19 +3,17 @@
 
 # CRUD de Produtos
 
-Este é um projeto **fullstack**, desenvolvido com ênfase no **backend**, com o objetivo de praticar e demonstrar conhecimentos em **Python**, **FastAPI**, **arquitetura limpa** e **testes automatizados**.
+Este projeto é um CRUD de produtos desenvolvido com foco principal no backend, com o objetivo de praticar e consolidar conhecimentos em Python, FastAPI, SQLAlchemy e testes automatizados.
 
-O frontend foi construído utilizando **vibe coding**, com foco em uma interface simples, clean e funcional, servindo principalmente como apoio para demonstrar o funcionamento da API.
-
-Meu principal objetivo neste projeto foi construir uma base sólida no backend, aplicando boas práticas de desenvolvimento, organização de código e integração eficiente entre as camadas. Reconheço que ainda há diversos pontos a evoluir e aperfeiçoar, especialmente relacionados à qualidade, desempenho e escalabilidade, o que reforça meu compromisso com aprendizado contínuo.
+A aplicação foi pensada como um projeto de estudo, buscando simular um cenário real de API REST, com organização de código, validação de dados e tratamento adequado de erros.
 
 
 
 ## Backend (meu foco principal)
 
-O backend é o núcleo deste projeto. Toda a API foi implementada em **Python** utilizando **FastAPI**, **SQLAlchemy** e uma arquitetura modular, priorizando clareza, manutenibilidade, escalabilidade e testabilidade.
+O backend é o núcleo do projeto. A API foi construída em Python utilizando FastAPI, com persistência de dados via SQLAlchemy e banco relacional.
 
-A estrutura do código foi pensada para facilitar futuras evoluções, seguindo boas práticas amplamente utilizadas no mercado.
+A organização do código segue uma estrutura modular, facilitando a leitura, manutenção e evolução do projeto.
 
 ### Estrutura dos arquivos
 
@@ -53,7 +51,10 @@ pytest tests/
 
 ## Frontend
 
-O frontend foi desenvolvido em **vibe coding**, utilizando **React**, **TypeScript**, **Vite** e **Tailwind CSS**. O objetivo foi entregar uma interface moderna, responsiva e intuitiva, com componentes reutilizáveis e organização clara, sem que o frontend fosse o foco principal do projeto.
+O frontend foi desenvolvido como apoio para visualização e consumo da API.
+Foi construído utilizando React, TypeScript, Vite e Tailwind CSS, priorizando uma interface simples, funcional e responsiva.
+
+O foco principal do projeto permanece no backend.
 
 
 
